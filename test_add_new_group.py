@@ -13,8 +13,8 @@ class TestTestaddnewgroup():
     self.driver.quit()
   
   def test_testaddnewgroup(self):
-    """Я ее понимаю что ему не нравится. Изначально в скобках после self.driver.get была просто ссылка. Я исправила по типу def get(self, url: str) -> None: - все равно подает. Подскажите, пожалуйста, в чем ошибка? """
-    self.driver.get(self, url: "http://localhost/addressbook/index.php")
+    """Я не понимаю что ему не нравится. Изначально в скобках после self.driver.get была просто ссылка (селениумИДЕ). Я исправила по типу def get(self, url: str) -> None: - все равно подает. Подскажите, пожалуйста, в чем ошибка? """
+    self.driver.get(self, url: http://localhost/addressbook/index.php)
     self.driver.set_window_size(756, 790)
     self.driver.find_element(By.NAME, "user").click()
     element = self.driver.find_element(By.NAME, "user")
