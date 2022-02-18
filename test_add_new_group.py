@@ -4,7 +4,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 
 
-class TestTestaddnewgroup():
+class Test_add_new_group():
   def setup_method(self, method):
     self.driver = webdriver.Chrome
     self.vars = {}
@@ -12,9 +12,9 @@ class TestTestaddnewgroup():
   def teardown_method(self, method):
     self.driver.quit()
   
-  def test_testaddnewgroup(self):
-    """Я не понимаю что ему не нравится. Изначально в скобках после self.driver.get была просто ссылка (селениумИДЕ). Я исправила по типу def get(self, url: str) -> None: - все равно подает. Подскажите, пожалуйста, в чем ошибка? """
-    self.driver.get(self, url: http://localhost/addressbook/index.php)
+  def test_add_new_group(self):
+    """Я не понимаю что ему не нравится. Изначально в скобках после self.driver.get была просто ссылка (селениумИДЕ). Я исправила по типу def get(self, url: str) -> None: - все равно падает. Подскажите, пожалуйста, в чем ошибка? """
+    self.driver.get(self, url=str("http://localhost/addressbook/index.php"))
     self.driver.set_window_size(756, 790)
     self.driver.find_element(By.NAME, "user").click()
     element = self.driver.find_element(By.NAME, "user")
@@ -39,6 +39,4 @@ class TestTestaddnewgroup():
     self.driver.find_element(By.NAME, "submit").click()
     self.driver.find_element(By.LINK_TEXT, "group page").click()
     self.driver.find_element(By.LINK_TEXT, "Logout").click()
-    self.driver.find_element(By.NAME, "user").send_keys("admin")
-    self.driver.find_element(By.NAME, "pass").send_keys("secret")
   
