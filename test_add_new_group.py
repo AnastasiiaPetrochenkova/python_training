@@ -6,14 +6,15 @@ from selenium.webdriver.common.by import By
 
 class TestTestaddnewgroup():
   def setup_method(self, method):
-    self.driver = webdriver.Chrome()
+    self.driver = webdriver.Chrome
     self.vars = {}
   
   def teardown_method(self, method):
     self.driver.quit()
   
   def test_testaddnewgroup(self):
-    self.driver.get("http://localhost/addressbook/index.php")
+    """Я ее понимаю что ему не нравится. Изначально в скобках после self.driver.get была просто ссылка. Я исправила по типу def get(self, url: str) -> None: - все равно подает. Подскажите, пожалуйста, в чем ошибка? """
+    self.driver.get(self, url: "http://localhost/addressbook/index.php")
     self.driver.set_window_size(756, 790)
     self.driver.find_element(By.NAME, "user").click()
     element = self.driver.find_element(By.NAME, "user")
