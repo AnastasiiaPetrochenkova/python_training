@@ -6,28 +6,20 @@ from selenium.webdriver.common.by import By
 
 class Test_add_new_group():
   def setup_method(self, method):
-    self.driver = webdriver.Chrome
-    self.vars = {}
+    self.driver = webdriver.Chrome(executable_path="/Users/anastasiia/chromedriver")
   
   def teardown_method(self, method):
     self.driver.quit()
   
   def test_add_new_group(self):
-    """Я не понимаю что ему не нравится. Изначально в скобках после self.driver.get была просто ссылка (селениумИДЕ). Я исправила по типу def get(self, url: str) -> None: - все равно падает. Подскажите, пожалуйста, в чем ошибка? """
-    self.driver.get(self, url=str("http://localhost/addressbook/index.php"))
-    self.driver.set_window_size(756, 790)
+    self.driver.get("http://localhost/addressbook/index.php")
     self.driver.find_element(By.NAME, "user").click()
-    element = self.driver.find_element(By.NAME, "user")
-    actions = ActionChains(self.driver)
-    actions.double_click(element).perform()
-    self.driver.find_element(By.CSS_SELECTOR, "hr").click()
+    self.driver.find_element(By.NAME, "user").clear()
+    self.driver.find_element(By.NAME, "user").send_keys('admin')
     self.driver.find_element(By.NAME, "pass").click()
-    self.driver.find_element(By.NAME, "pass").click()
-    element = self.driver.find_element(By.NAME, "pass")
-    actions = ActionChains(self.driver)
-    actions.double_click(element).perform()
+    self.driver.find_element(By.NAME, "pass").clear()
+    self.driver.find_element(By.NAME, "pass").send_keys('secret')
     self.driver.find_element(By.CSS_SELECTOR, "input:nth-child(7)").click()
-    self.driver.find_element(By.ID, "nav").click()
     self.driver.find_element(By.LINK_TEXT, "groups").click()
     self.driver.find_element(By.NAME, "new").click()
     self.driver.find_element(By.NAME, "group_name").click()
