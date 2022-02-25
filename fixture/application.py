@@ -1,29 +1,24 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from fixture.session import SessionHelper
 
 class Application:
 
     def __init__(self, method):
-        self.driver = webdriver.Chrome(executable_path="/chromedriver")
+        self.driver = webdriver.Chrome(executable_path="/Users/anastasiia/PycharmProjects/python_training/chromedriver")
+        self.session = SessionHelper(self)
 
     def open_home_page(self):
+        self.driver = self.driver
         self.driver.get("http://localhost/addressbook/index.php")
 
-    def login(self, user_name, password):
-        self.open_home_page()
-        self.driver.find_element(By.NAME, "user").click()
-        self.driver.find_element(By.NAME, "user").clear()
-        self.driver.find_element(By.NAME, "user").send_keys(user_name)
-        self.driver.find_element(By.NAME, "pass").click()
-        self.driver.find_element(By.NAME, "pass").clear()
-        self.driver.find_element(By.NAME, "pass").send_keys(password)
-        self.driver.find_element(By.CSS_SELECTOR, "input:nth-child(7)").click()
-
     def open_groups_page(self):
+        self.driver = self.driver
         self.driver.find_element(By.LINK_TEXT, "groups").click()
 
     def create_group(self, group):
+        self.driver = self.driver
         # open groups page
         self.open_groups_page()
         # init group creation
@@ -41,12 +36,11 @@ class Application:
         self.return_to_groups_page()
 
     def return_to_groups_page(self):
+        self.driver = self.driver
         self.driver.find_element(By.LINK_TEXT, "group page").click()
 
-    def logout(self):
-        self.driver.find_element(By.LINK_TEXT, "Logout").click()
-
     def add_contact(self, contact):
+        self.driver = self.driver
         self.driver.find_element(By.LINK_TEXT, "add new").click()
         self.driver.find_element(By.NAME, "firstname").click()
         self.driver.find_element(By.NAME, "firstname").send_keys(contact.firstname)
@@ -72,4 +66,5 @@ class Application:
         self.driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()
 
     def destroy(self):
+        self.driver = self.driver
         self.driver.quit()
