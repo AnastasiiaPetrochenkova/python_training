@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 class Application:
 
     def __init__(self, method):
-        self.driver = webdriver.Chrome(executable_path="/Users/anastasiia/PycharmProjects/python_training/chromedriver")
+        self.driver = webdriver.Chrome(executable_path="/chromedriver")
 
     def open_home_page(self):
         self.driver.get("http://localhost/addressbook/index.php")
