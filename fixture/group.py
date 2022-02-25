@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class GroupHelper:
 
     def __init__(self, app):
@@ -39,4 +40,3 @@ class GroupHelper:
         # delete selected group
         self.driver.find_element(By.NAME, 'delete').click()
         self.return_to_groups_page()
-

@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from model.group import Group
-
 
 def test_add_new_group(app):
     app.session.login(user_name='admin', password='secret')
