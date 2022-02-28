@@ -40,3 +40,18 @@ class GroupHelper:
         # delete selected group
         self.driver.find_element(By.NAME, 'delete').click()
         self.return_to_groups_page()
+
+    def edit_first(self, group):
+        self.driver = self.app.driver
+        # open groups page
+        self.open_groups_page()
+        self.driver.find_element(By.NAME, 'selected[]').click()
+        self.driver.find_element(By.NAME, 'edit').click()
+        self.driver.find_element(By.NAME, "group_name").clear()
+        self.driver.find_element(By.NAME, "group_name").send_keys(group.name)
+        self.driver.find_element(By.NAME, "group_header").clear()
+        self.driver.find_element(By.NAME, "group_header").send_keys(group.header)
+        self.driver.find_element(By.NAME, "group_footer").clear()
+        self.driver.find_element(By.NAME, "group_footer").send_keys(group.footer)
+        self.driver.find_element(By.NAME, 'update').click()
+        self.return_to_groups_page()

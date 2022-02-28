@@ -32,7 +32,7 @@ class ContactHelper:
         self.driver.find_element(By.NAME, "email").send_keys(contact.email)
         self.driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()
 
-    def delete_first_contact(self):
+    def delete_first(self):
         self.driver = self.app.driver
         self.driver.find_element(By.XPATH, '//a[contains(text(),"home")]').click()
         self.driver.find_element(By.NAME, 'selected[]').click()
@@ -40,7 +40,7 @@ class ContactHelper:
         self.driver.switch_to.alert.accept()
         self.driver.find_element(By.XPATH, '//a[contains(text(),"home")]').click()
 
-    def edit_first_contact(self, contact):
+    def edit_first(self, contact):
         self.driver = self.app.driver
         self.driver.find_element(By.XPATH, "//img[@alt='Edit']").click()
         self.driver.find_element(By.NAME, "firstname").click()
