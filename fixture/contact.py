@@ -31,3 +31,11 @@ class ContactHelper:
         self.driver.find_element(By.NAME, "email").click()
         self.driver.find_element(By.NAME, "email").send_keys(contact.email)
         self.driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()
+
+    def delete_first_contact(self):
+        self.driver = self.app.driver
+        self.driver.find_element(By.XPATH, '//a[contains(text(),"home")]').click()
+        self.driver.find_element(By.NAME, 'selected[]').click()
+        self.driver.find_element(By.XPATH, '//input[@value="Delete"]').click()
+        self.driver.switch_to.alert.accept()
+        self.driver.find_element(By.XPATH, '//a[contains(text(),"home")]').click()
