@@ -5,6 +5,7 @@ class ContactHelper:
 
     def __init__(self, app):
         self.app = app
+        self.driver = self.app.driver
 
     def contact_profile(self, contact):
         self.driver.find_element(By.NAME, "firstname").click()
@@ -30,14 +31,12 @@ class ContactHelper:
         self.driver.find_element(By.NAME, "email").send_keys(contact.email)
 
     def add(self, contact):
-        self.driver = self.app.driver
         self.driver.find_element(By.XPATH, '//a[contains(text(),"home")]').click()
         self.driver.find_element(By.LINK_TEXT, "add new").click()
-        ContactHelper.contact_profile(self, contact)
+        self.contact_profile(contact)
         self.driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()
 
     def delete_first(self):
-        self.driver = self.app.driver
         self.driver.find_element(By.XPATH, '//a[contains(text(),"home")]').click()
         self.driver.find_element(By.NAME, 'selected[]').click()
         self.driver.find_element(By.XPATH, '//input[@value="Delete"]').click()
@@ -45,10 +44,7 @@ class ContactHelper:
         self.driver.find_element(By.XPATH, '//a[contains(text(),"home")]').click()
 
     def edit_first(self, contact):
-        self.driver = self.app.driver
         self.driver.find_element(By.XPATH, '//a[contains(text(),"home")]').click()
         self.driver.find_element(By.XPATH, "//img[@alt='Edit']").click()
-        ContactHelper.contact_profile(self, contact)
+        self.contact_profile(contact)
         self.driver.find_element(By.NAME, "update").click()
-
-
