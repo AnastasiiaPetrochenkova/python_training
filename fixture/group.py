@@ -22,7 +22,6 @@ class GroupHelper:
         self.edit_group_field("group_name", group.name)
         self.edit_group_field("group_header", group.header)
         self.edit_group_field("group_footer", group.footer)
-        self.driver.find_element(By.NAME, "update").click()
 
     def return_to_groups_page(self):
         self.driver.find_element(By.LINK_TEXT, "group page").click()
@@ -45,4 +44,5 @@ class GroupHelper:
         self.select_first_group()
         self.driver.find_element(By.NAME, 'edit').click()
         self.edit_group_page(group)
+        self.driver.find_element(By.NAME, "update").click()
         self.return_to_groups_page()

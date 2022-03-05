@@ -26,7 +26,6 @@ class ContactHelper:
         self.edit_contact_field("home", contact.home_phone)
         self.edit_contact_field("mobile", contact.mobile_phone)
         self.edit_contact_field("email", contact.email)
-        self.driver.find_element(By.NAME, "update").click()
 
     def add(self, contact):
         self.open_contact_page()
@@ -45,5 +44,6 @@ class ContactHelper:
         self.open_contact_page()
         self.driver.find_element(By.XPATH, "//img[@alt='Edit']").click()
         self.edit_contact_page(contact)
+        self.driver.find_element(By.NAME, "update").click()
         self.open_contact_page()
 
