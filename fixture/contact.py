@@ -47,3 +47,7 @@ class ContactHelper:
         self.driver.find_element(By.NAME, "update").click()
         self.open_contact_page()
 
+    def count(self):
+        self.open_contact_page()
+        return len(self.driver.find_elements(By.NAME, 'selected[]'))
+
