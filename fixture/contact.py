@@ -8,7 +8,8 @@ class ContactHelper:
         self.driver = self.app.driver
 
     def open_contact_page(self):
-        self.driver.find_element(By.XPATH, '//a[contains(text(),"home")]').click()
+        if not (self.driver.current_url.endswith("index.php") and len(self.driver.find_elements(By.XPATH, '//input[@value="Send e-Mail"]')) > 0):
+            self.driver.find_element(By.XPATH, '//a[contains(text(),"home")]').click()
 
     def edit_contact_field(self, field_name, text):
         if text is not None:

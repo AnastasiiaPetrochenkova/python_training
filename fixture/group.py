@@ -8,7 +8,8 @@ class GroupHelper:
         self.driver = self.app.driver
 
     def open_groups_page(self):
-        self.driver.find_element(By.LINK_TEXT, "groups").click()
+        if not (self.driver.current_url.endswith("/group.php") and len(self.driver.find_elements(By.NAME, 'new'))>0):
+            self.driver.find_element(By.LINK_TEXT, "groups").click()
 
     def select_first_group(self):
         self.driver.find_element(By.NAME, 'selected[]').click()
