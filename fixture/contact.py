@@ -57,9 +57,9 @@ class ContactHelper:
         self.open_contact_page()
         contacts = []
         for element in self.driver.find_elements(By.NAME, 'selected[]'):
-            firstname = element.getAttribute('title')
-            lastname = element.getAttribute('alt')
-            id = element.value
-            contacts.append(Contact(firstname=firstname, lastname=lastname, id=id))
+            firstname = element.get_attribute('title')
+            lastname = element.get_attribute('alt')
+            id = element.get_attribute('value')
+            contacts.append(Contact(firstname=firstname[8:-1], lastname=lastname[8:-1], id=id))
         return contacts
 
