@@ -34,6 +34,7 @@ class ContactHelper:
         self.driver.find_element(By.LINK_TEXT, "add new").click()
         self.edit_contact_page(contact)
         self.driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()
+        self.contact_cache = None
 
     def delete_first(self):
         self.open_contact_page()
@@ -41,6 +42,7 @@ class ContactHelper:
         self.driver.find_element(By.XPATH, '//input[@value="Delete"]').click()
         self.driver.switch_to.alert.accept()
         self.open_contact_page()
+        self.contact_cache = None
 
     def edit_first(self, contact):
         self.open_contact_page()
@@ -48,18 +50,23 @@ class ContactHelper:
         self.edit_contact_page(contact)
         self.driver.find_element(By.NAME, "update").click()
         self.open_contact_page()
+        self.contact_cache = None
 
     def count(self):
         self.open_contact_page()
         return len(self.driver.find_elements(By.NAME, 'selected[]'))
 
+    contact_cache = None
+
     def get_contact_list(self):
-        self.open_contact_page()
-        contacts = []
-        for element in self.driver.find_elements(By.NAME, 'selected[]'):
-            firstname = element.get_attribute('title')
-            lastname = element.get_attribute('alt')
-            id = element.get_attribute('value')
-            contacts.append(Contact(firstname=firstname[8:-1], lastname=lastname[8:-1], id=id))
-        return contacts
+        if self.contact_cache is None:
+            self.open_contact_page()
+            self.contact_cache = []
+            for element in self.driver.find_elements(By.NAME, 'selected[]'):
+                firstname = element.get_attribute('title')
+                lastname = element.get_attribute('alt')
+                id = element.get_attribute('value')
+                self.contact_cache.append(Contact(firstname=firstname[8:-1], lastname=lastname[8:-1], id=id))
+        return list(self.contact_cache)
+
 
