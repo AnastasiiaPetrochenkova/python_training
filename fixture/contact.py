@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from model.contact import Contact
 
 
 class ContactHelper:
@@ -51,4 +52,12 @@ class ContactHelper:
     def count(self):
         self.open_contact_page()
         return len(self.driver.find_elements(By.NAME, 'selected[]'))
+
+    def get_contact_list(self):
+        self.open_contact_page()
+        contacts = []
+        for element in self.driver.find_elements(By.NAME, 'entry'):
+            text = element.text
+            contacts.append(Contact(firstname=text))
+        return contacts
 

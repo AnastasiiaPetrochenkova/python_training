@@ -7,7 +7,10 @@ def test_edit_first(app):
         app.contact.add(Contact(firstname="Имя2", middlename="Отчество", lastname="Фамилия", nickname="Никнейм", title="Название",
                 company="Компания", address="Адрес", home_phone="749512312311", mobile_phone="797788148991",
                 email="test@test.test"))
+    old_contacts = app.contact.get_contact_list()
     app.contact.edit_first(
         Contact(firstname="Имя123", middlename="Отчество123", lastname="Фамилия123", nickname="Никнейм123", title="Название123",
                 company="Компания123", address="Адрес123", home_phone="12345", mobile_phone="12345",
                 email="test123@test.test"))
+    new_contacts = app.contact.get_contact_list()
+    assert len(old_contacts) == len(new_contacts)
