@@ -36,17 +36,20 @@ class ContactHelper:
         self.driver.find_element(By.CSS_SELECTOR, "input:nth-child(87)").click()
         self.contact_cache = None
 
-    def delete_first(self):
+    def select_contact_by_index(self, index):
+        self.driver.find_elements(By.NAME, 'selected[]')[index].click()
+
+    def delete_contact_by_index(self, index):
         self.open_contact_page()
-        self.driver.find_element(By.NAME, 'selected[]').click()
-        self.driver.find_element(By.XPATH, '//input[@value="Delete"]').click()
+        self.select_contact_by_index(index)
+        self.driver.find_element(By.CSS_SELECTOR, '[value="Delete"]').click()
         self.driver.switch_to.alert.accept()
         self.open_contact_page()
         self.contact_cache = None
 
-    def edit_first(self, contact):
+    def edit_contact_by_index(self, contact, index):
         self.open_contact_page()
-        self.driver.find_element(By.XPATH, "//img[@alt='Edit']").click()
+        self.driver.find_elements(By.CSS_SELECTOR, '[title="Edit"]')[index].click()
         self.edit_contact_page(contact)
         self.driver.find_element(By.NAME, "update").click()
         self.open_contact_page()

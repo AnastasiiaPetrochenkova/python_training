@@ -12,8 +12,8 @@ class GroupHelper:
         if not (self.driver.current_url.endswith("/group.php") and len(self.driver.find_elements(By.NAME, 'new'))>0):
             self.driver.find_element(By.LINK_TEXT, "groups").click()
 
-    def select_first_group(self):
-        self.driver.find_element(By.NAME, 'selected[]').click()
+    def select_group_by_index(self, index):
+        self.driver.find_elements(By.NAME, 'selected[]')[index].click()
 
     def edit_group_field(self, field_name, text):
         if text is not None:
@@ -36,16 +36,16 @@ class GroupHelper:
         self.return_to_groups_page()
         self.group_cache = None
 
-    def delete_first(self):
+    def delete_group_by_index(self, index):
         self.open_groups_page()
-        self.select_first_group()
+        self.select_group_by_index(index)
         self.driver.find_element(By.NAME, 'delete').click()
         self.return_to_groups_page()
         self.group_cache = None
 
-    def edit_first(self, group):
+    def edit_group_by_index(self, group, index):
         self.open_groups_page()
-        self.select_first_group()
+        self.select_group_by_index(index)
         self.driver.find_element(By.NAME, 'edit').click()
         self.edit_group_page(group)
         self.driver.find_element(By.NAME, "update").click()
