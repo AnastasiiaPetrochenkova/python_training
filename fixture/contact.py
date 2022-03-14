@@ -65,11 +65,12 @@ class ContactHelper:
         if self.contact_cache is None:
             self.open_contact_page()
             self.contact_cache = []
-            for element in self.driver.find_elements(By.NAME, 'selected[]'):
-                firstname = element.get_attribute('title')
-                lastname = element.get_attribute('alt')
-                id = element.get_attribute('value')
-                self.contact_cache.append(Contact(firstname=firstname[8:-1], lastname=lastname[8:-1], id=id))
+            for element in self.driver.find_elements(By.NAME, 'entry'):
+                firstname = element.find_element(By.XPATH, './td[3]').text
+                lastname = element.find_element(By.XPATH, './td[2]').text
+                address = element.find_element(By.XPATH, './td[4]').text
+                id = element.find_element(By.XPATH, './td[1]/input').get_attribute('id')
+                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, address=address, id=id))
         return list(self.contact_cache)
 
 
