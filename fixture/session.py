@@ -15,7 +15,7 @@ class SessionHelper:
         self.driver.find_element(By.NAME, "pass").click()
         self.driver.find_element(By.NAME, "pass").clear()
         self.driver.find_element(By.NAME, "pass").send_keys(password)
-        self.driver.find_element(By.CSS_SELECTOR, "input:nth-child(7)").click()
+        self.driver.find_element(By.CSS_SELECTOR, 'input[type="submit"]').click()
 
     def logout(self):
         self.driver.find_element(By.LINK_TEXT, "Logout").click()
@@ -24,7 +24,10 @@ class SessionHelper:
         return len(self.driver.find_elements(By.LINK_TEXT, "Logout")) > 0
 
     def is_logged_in_as(self, username):
-        return self.driver.find_element(By.XPATH, '//*[@id="top"]/form/b').text == "(" + username + ")"
+        return self.get_logged_user() == username
+
+    def get_logged_user(self):
+        return self.driver.find_element(By.XPATH, '//*[@id="top"]/form/b').text[1:-1]
 
     def ensure_logout(self):
         if self.is_logged_in():
@@ -37,3 +40,12 @@ class SessionHelper:
             else:
                 self.logout()
         self.login(username, password)
+
+
+
+
+
+
+
+
+
