@@ -25,9 +25,9 @@ class Contact:
         self.all_emails_from_home_page = all_emails_from_home_page
 
     def __repr__(self):
-        return "%s:%s:%s:%s:%s:%s:%s:%s:%s:%s" % (
-        self.firstname, self.lastname, self.address, self.id, self.home_phone, self.work_phone, self.mobile_phone,
-        self.email1, self.email2, self.email3)
+        return "%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s" % (
+        self.firstname, self.middlename, self.lastname, self.nickname, self.title, self.company, self.address,
+        self.home_phone, self.work_phone, self.mobile_phone, self.email1, self.email2, self.email3, self.id)
 
     def __eq__(self, other):
         return (
