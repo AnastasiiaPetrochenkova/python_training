@@ -87,9 +87,7 @@ class ContactHelper:
                 self.contact_cache.append(
                     Contact(firstname=firstname, lastname=lastname, address=address, id=id,
                             all_emails_from_home_page=all_emails, all_phones_from_home_page=all_phones))
-        print(list(self.contact_cache))
         return list(self.contact_cache)
-
 
     def get_contact_info_from_edit_page(self, index):
         self.open_contact_to_edit_by_index(index)
@@ -103,8 +101,8 @@ class ContactHelper:
         email1 = self.driver.find_element(By.NAME, 'email').get_attribute('value')
         email2 = self.driver.find_element(By.NAME, 'email2').get_attribute('value')
         email3 = self.driver.find_element(By.NAME, 'email3').get_attribute('value')
-        return Contact(firstname=firstname, lastname=lastname, address=address, id=id, home_phone=home_phone, mobile_phone=mobile_phone, work_phone=work_phone, email1=email1, email2=email2, email3=email3)
-
+        return Contact(firstname=firstname, lastname=lastname, address=address, id=id, home_phone=home_phone,
+                       mobile_phone=mobile_phone, work_phone=work_phone, email1=email1, email2=email2, email3=email3)
 
     def get_contact_from_view_page(self, index):
         self.open_contact_view_by_index(index)

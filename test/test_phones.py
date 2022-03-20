@@ -11,10 +11,11 @@ def test_alldata_on_home_page(app):
     assert person_data_from_home_page.lastname == person_data_from_edit_page.lastname
     assert person_data_from_home_page.address == person_data_from_edit_page.address
     assert person_data_from_home_page.id == person_data_from_edit_page.id
-    assert person_data_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(person_data_from_edit_page)
-    assert person_data_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(person_data_from_edit_page)
-    print(person_data_from_home_page)
-    print(person_data_from_edit_page)
+    assert person_data_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(
+        person_data_from_edit_page)
+    assert person_data_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(
+        person_data_from_edit_page)
+
 
 def test_get_contact_list(app):
     app.contact.get_contact_list()
@@ -38,9 +39,9 @@ def merge_phones_like_on_home_page(contact):
                                 filter(lambda x: x is not None,
                                        [contact.home_phone, contact.mobile_phone, contact.work_phone]))))
 
+
 def merge_emails_like_on_home_page(contact):
     return "\n".join(filter(lambda x: x != "",
                             map(lambda x: clear(x),
                                 filter(lambda x: x is not None,
                                        [contact.email1, contact.email2, contact.email3]))))
-
