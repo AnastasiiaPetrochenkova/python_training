@@ -51,7 +51,6 @@ testdata = [
 
 @pytest.mark.parametrize('contact', testdata, ids=[str(x) for x in testdata])
 def test_add_contact(app, contact):
-    pass
     old_contacts = app.contact.get_contact_list()
     app.contact.add(contact)
     new_contacts = app.contact.get_contact_list()
