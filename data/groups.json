@@ -1,0 +1,44 @@
+[
+  {
+    "py/object": "model.group.Group",
+    "name": "",
+    "header": "",
+    "footer": "",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "личность",
+    "header": "обладать",
+    "footer": "москвич",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "бояться",
+    "header": "согласный",
+    "footer": "столовый",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "умереть",
+    "header": "мастерская",
+    "footer": "знак",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "убедиться",
+    "header": "сыграть",
+    "footer": "время",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "надел",
+    "header": "метр",
+    "footer": "грозный",
+    "id": null
+  }
+]

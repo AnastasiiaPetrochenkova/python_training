@@ -28,10 +28,10 @@ class GroupHelper:
     def return_to_groups_page(self):
         self.driver.find_element(By.LINK_TEXT, "group page").click()
 
-    def create(self, group):
+    def create(self, json_groups):
         self.open_groups_page()
         self.driver.find_element(By.NAME, "new").click()
-        self.edit_group_page(group)
+        self.edit_group_page(json_groups)
         self.driver.find_element(By.NAME, "submit").click()
         self.return_to_groups_page()
         self.group_cache = None
@@ -43,7 +43,7 @@ class GroupHelper:
         self.return_to_groups_page()
         self.group_cache = None
 
-    def edit_group_by_index(self, group, index):
+    def edit_group_by_index(self, index, group):
         self.open_groups_page()
         self.select_group_by_index(index)
         self.driver.find_element(By.NAME, 'edit').click()
