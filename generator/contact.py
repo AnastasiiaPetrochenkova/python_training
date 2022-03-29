@@ -4,7 +4,6 @@ from mimesis.locales import Locale
 from mimesis import Person
 from mimesis import Address
 import os.path
-import json
 import jsonpickle
 import getopt
 import sys
