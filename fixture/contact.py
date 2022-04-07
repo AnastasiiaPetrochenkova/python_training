@@ -1,6 +1,8 @@
-from selenium.webdriver.common.by import By
-from model.contact import Contact
 import re
+
+from selenium.webdriver.common.by import By
+
+from model.contact import Contact
 
 
 class ContactHelper:
@@ -45,9 +47,20 @@ class ContactHelper:
     def select_contact_by_index(self, index):
         self.driver.find_elements(By.NAME, 'selected[]')[index].click()
 
+    def select_contact_by_id(self, id):
+        self.driver.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
+
     def delete_contact_by_index(self, index):
         self.open_contact_page()
         self.select_contact_by_index(index)
+        self.driver.find_element(By.CSS_SELECTOR, '[value="Delete"]').click()
+        self.driver.switch_to.alert.accept()
+        self.open_contact_page()
+        self.contact_cache = None
+
+    def delete_contact_by_id(self, id):
+        self.open_contact_page()
+        self.select_contact_by_id(id)
         self.driver.find_element(By.CSS_SELECTOR, '[value="Delete"]').click()
         self.driver.switch_to.alert.accept()
         self.open_contact_page()
@@ -60,9 +73,20 @@ class ContactHelper:
         self.open_contact_page()
         self.contact_cache = None
 
+    def edit_contact_by_id(self, contact, id):
+        self.open_contact_to_edit_by_id(id)
+        self.edit_contact_page(contact)
+        self.driver.find_element(By.NAME, "update").click()
+        self.open_contact_page()
+        self.contact_cache = None
+
     def open_contact_to_edit_by_index(self, index):
         self.open_contact_page()
         self.driver.find_elements(By.CSS_SELECTOR, '[title="Edit"]')[index].click()
+
+    def open_contact_to_edit_by_id(self, id):
+        self.open_contact_page()
+        self.driver.find_element(By.XPATH, "//input[@id='%s']/../..//*[@title='Edit']" % id).click()
 
     def open_contact_view_by_index(self, index):
         self.open_contact_page()
@@ -104,7 +128,8 @@ class ContactHelper:
         email2 = self.driver.find_element(By.NAME, 'email2').get_attribute('value')
         email3 = self.driver.find_element(By.NAME, 'email3').get_attribute('value')
         return Contact(firstname=firstname, lastname=lastname, address=address, id=id, home_phone=home_phone,
-                       mobile_phone=mobile_phone, work_phone=work_phone, secondary_phone=secondary_phone, email1=email1, email2=email2, email3=email3)
+                       mobile_phone=mobile_phone, work_phone=work_phone, secondary_phone=secondary_phone, email1=email1,
+                       email2=email2, email3=email3)
 
     def get_contact_from_view_page(self, index):
         self.open_contact_view_by_index(index)
@@ -113,4 +138,5 @@ class ContactHelper:
         work_phone = re.search("W: (.*)", text).group(1)
         mobile_phone = re.search("M: (.*)", text).group(1)
         secondary_phone = re.search("P: (.*)", text).group(1)
-        return Contact(home_phone=home_phone, mobile_phone=mobile_phone, work_phone=work_phone, secondary_phone=secondary_phone)
+        return Contact(home_phone=home_phone, mobile_phone=mobile_phone, work_phone=work_phone,
+                       secondary_phone=secondary_phone)

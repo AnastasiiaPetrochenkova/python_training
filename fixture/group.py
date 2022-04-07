@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+
 from model.group import Group
 
 
@@ -9,11 +10,14 @@ class GroupHelper:
         self.driver = self.app.driver
 
     def open_groups_page(self):
-        if not (self.driver.current_url.endswith("/group.php") and len(self.driver.find_elements(By.NAME, 'new'))>0):
+        if not (self.driver.current_url.endswith("/group.php") and len(self.driver.find_elements(By.NAME, 'new')) > 0):
             self.driver.find_element(By.LINK_TEXT, "groups").click()
 
     def select_group_by_index(self, index):
         self.driver.find_elements(By.NAME, 'selected[]')[index].click()
+
+    def select_group_by_id(self, id):
+        self.driver.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
 
     def edit_group_field(self, field_name, text):
         if text is not None:
@@ -43,9 +47,25 @@ class GroupHelper:
         self.return_to_groups_page()
         self.group_cache = None
 
+    def delete_group_by_id(self, id):
+        self.open_groups_page()
+        self.select_group_by_id(id)
+        self.driver.find_element(By.NAME, 'delete').click()
+        self.return_to_groups_page()
+        self.group_cache = None
+
     def edit_group_by_index(self, index, group):
         self.open_groups_page()
         self.select_group_by_index(index)
+        self.driver.find_element(By.NAME, 'edit').click()
+        self.edit_group_page(group)
+        self.driver.find_element(By.NAME, "update").click()
+        self.return_to_groups_page()
+        self.group_cache = None
+
+    def edit_group_by_id(self, id, group):
+        self.open_groups_page()
+        self.select_group_by_id(id)
         self.driver.find_element(By.NAME, 'edit').click()
         self.edit_group_page(group)
         self.driver.find_element(By.NAME, "update").click()
@@ -67,12 +87,3 @@ class GroupHelper:
                 id = element.find_element(By.NAME, 'selected[]').get_attribute('value')
                 self.group_cache.append(Group(name=text, id=id))
         return list(self.group_cache)
-
-
-
-
-
-
-
-
-
