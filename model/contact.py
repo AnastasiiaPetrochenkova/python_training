@@ -6,7 +6,7 @@ class Contact:
     def __init__(self, firstname=None, middlename=None, lastname=None, nickname=None, title=None, company=None,
                  address=None, home_phone=None, work_phone=None, mobile_phone=None, secondary_phone=None,
                  email1=None, email2=None, email3=None, id=None, all_phones_from_home_page=None,
-                 all_emails_from_home_page=None):
+                 all_emails_from_home_page=None, group_id=None):
         self.firstname = firstname
         self.middlename = middlename
         self.lastname = lastname
@@ -24,12 +24,13 @@ class Contact:
         self.id = id
         self.all_phones_from_home_page = all_phones_from_home_page
         self.all_emails_from_home_page = all_emails_from_home_page
+        self.group_id = group_id
 
     def __repr__(self):
-        return "%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s" % (
+        return "%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s" % (
             self.firstname, self.middlename, self.lastname, self.nickname, self.title, self.company, self.address,
             self.home_phone, self.work_phone, self.mobile_phone, self.secondary_phone, self.email1, self.email2,
-            self.email3, self.id)
+            self.email3, self.id, self.group_id)
 
     def __eq__(self, other):
         return (

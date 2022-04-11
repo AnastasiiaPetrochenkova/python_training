@@ -1,17 +1,12 @@
-import os.path
-from model.group import Group
-import random
-import string
 import getopt
+import os.path
 import sys
+
+import jsonpickle
 from mimesis import Generic
 from mimesis.locales import Locale
-import json
-from fixture.application import Application
-import pytest
-import os.path
-import importlib
-import jsonpickle
+
+from model.group import Group
 
 g = Generic(locale=Locale.RU)
 
@@ -45,4 +40,3 @@ file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", f)
 with open(file, "w") as out:
     jsonpickle.set_encoder_options("json", indent=2, ensure_ascii=False)
     out.write(jsonpickle.encode(testdata))
-

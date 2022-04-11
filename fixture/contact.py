@@ -1,9 +1,8 @@
 import re
-
 from selenium.webdriver.common.by import By
-
 from model.contact import Contact
-
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import Select
 
 class ContactHelper:
 
@@ -46,6 +45,40 @@ class ContactHelper:
 
     def select_contact_by_index(self, index):
         self.driver.find_elements(By.NAME, 'selected[]')[index].click()
+
+    def add_contact_to_group(self, number):
+        self.driver.find_elements(By.XPATH, '//*[@id="content"]/form[2]/div[4]/select/option')[number].click()
+        self.driver.find_element(By.CSS_SELECTOR, '[value="Add to"]').click()
+        try:
+            self.driver.find_element(By.XPATH, '/html/body/div/div[4]/div/text()')
+        except NoSuchElementException:
+            return False
+        return True
+
+    def remove_from_group(self, contact, group):
+        Select(self.app.driver.find_element(By.NAME, 'group')).select_by_value(group.id)
+        self.select_contact_by_id(contact.id)
+        self.app.driver.find_element(By.NAME, "remove").click()
+        self.open_contact_page()
+
+    def get_group_contact_list(self, group):
+        if self.contact_cache is None:
+            wd = self.app.wd
+            selector = Select(wd.find_element(By.NAME, 'group'))
+            selector.select_by_value(group.id)
+            self.contact_cache = []
+            for row in wd.find_elements(By.NAME, "entry"):
+                cells = row.find_elements(By.XPATH, "td")
+                lastname = cells[1].text
+                firstname = cells[2].text
+                address = cells[3].text
+                id = cells[0].find_element(By.NAME, "selected[]").get_attribute("value")
+                all_emails = cells[4].text
+                all_phones = cells[5].text
+                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id, address=address,
+                                                  all_phones_from_home_page=all_phones,
+                                                  all_emails_from_home_page=all_emails))
+        return list(self.contact_cache)
 
     def select_contact_by_id(self, id):
         self.driver.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
