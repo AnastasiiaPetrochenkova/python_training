@@ -4,6 +4,8 @@ from selenium import webdriver
 from fixture.contact import ContactHelper
 from fixture.group import GroupHelper
 from fixture.session import SessionHelper
+from fixture.orm import ORMFixture
+
 
 
 class Application:
@@ -22,6 +24,7 @@ class Application:
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
         self.base_url = base_url
+        self.orm = ORMFixture(host='127.0.0.1', name='addressbook', user='root', password='')
 
     def is_valid(self):
         try:

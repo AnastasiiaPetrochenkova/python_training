@@ -46,21 +46,6 @@ class ContactHelper:
     def select_contact_by_index(self, index):
         self.driver.find_elements(By.NAME, 'selected[]')[index].click()
 
-    def add_contact_to_group(self, number):
-        self.driver.find_elements(By.XPATH, '//*[@id="content"]/form[2]/div[4]/select/option')[number].click()
-        self.driver.find_element(By.CSS_SELECTOR, '[value="Add to"]').click()
-        try:
-            self.driver.find_element(By.XPATH, '/html/body/div/div[4]/div/text()')
-        except NoSuchElementException:
-            return False
-        return True
-
-    def remove_from_group(self, contact, group):
-        Select(self.app.driver.find_element(By.NAME, 'group')).select_by_value(group.id)
-        self.select_contact_by_id(contact.id)
-        self.app.driver.find_element(By.NAME, "remove").click()
-        self.open_contact_page()
-
     def get_group_contact_list(self, group):
         if self.contact_cache is None:
             wd = self.app.wd
@@ -173,3 +158,36 @@ class ContactHelper:
         secondary_phone = re.search("P: (.*)", text).group(1)
         return Contact(home_phone=home_phone, mobile_phone=mobile_phone, work_phone=work_phone,
                        secondary_phone=secondary_phone)
+
+    def add_to_group(self, contact, group):
+        self.select_contact_by_id(contact.id)
+        Select(self.driver.find_element(By.NAME, 'to_group')).select_by_value(group.id)
+        self.driver.find_element(By.CSS_SELECTOR, "input[value='Add to']").click()
+        self.open_contact_page()
+
+    def change_field_value(self, field_name, text):
+        if text is not None:
+            self.driver.find_element(By.NAME, field_name).click()
+            self.driver.find_element(By.NAME, field_name).clear()
+            self.driver.find_element(By.NAME, field_name).send_keys(text)
+
+    def fill_contact_form(self, contact, group=None):
+        self.change_field_value("firstname", contact.firstname)
+        self.change_field_value("middlename", contact.middlename)
+        self.change_field_value("lastname", contact.lastname)
+        if group:
+            Select(self.driver.find_element(By.NAME, 'new_group')).select_by_value(group.id)
+
+    def create_contact_to_group(self, contact, group=None):
+        self.open_contact_page()
+        self.driver.find_element(By.LINK_TEXT, "add new").click()
+        self.fill_contact_form(contact, group)
+        self.driver.find_element(By.NAME, "submit").click()
+        self.open_contact_page()
+        self.contact_cache = None
+
+    def delete_contact_from_group(self, contact, group):
+        Select(self.driver.find_element(By.NAME, 'group')).select_by_value(group.id)
+        self.select_contact_by_id(contact.id)
+        self.driver.find_element(By.NAME, "remove").click()
+        self.open_contact_page()
