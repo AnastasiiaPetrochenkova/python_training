@@ -22,6 +22,9 @@ def test_add_contact_to_group(app):
     groups = app.orm.get_group_list()
     group = random.choice(groups)
     old_contacts = app.orm.get_contacts_in_group(group)
+    if len(old_contacts) == 0:
+        app.contact.create_contact_to_group(Contact(firstname='Firstname', lastname='Lastname'), group)
+        old_contacts = app.orm.get_contacts_in_group(group)
     contacts = app.orm.get_contacts_not_in_group(group)
     contact = random.choice(contacts)
     app.contact.add_to_group(contact, group)
