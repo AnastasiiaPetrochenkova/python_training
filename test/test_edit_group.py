@@ -6,7 +6,7 @@ from model.group import Group
 
 def test_edit_by_id(app, db, check_ui):
     if len(db.get_group_list()) == 0:
-        app.group.create(Group(name='test', header='test1', footer='test2'))
+        app.group.create_contact_to_group(Group(name='test', header='test1', footer='test2'))
     old_groups = db.get_group_list()
     edit_group = random.choice(old_groups)
     index = old_groups.index(edit_group)
