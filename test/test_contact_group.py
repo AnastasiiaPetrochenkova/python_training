@@ -18,7 +18,7 @@ def test_add_contact_to_group(app):
                     email3="3test@test.test"))
     group_list = app.orm.get_group_list()
     if len(group_list) == 0:
-        app.group.create_contact_to_group(Group(name='test', header='test1', footer='test2'))
+        app.group.create(Group(name='test', header='test1', footer='test2'))
     groups = app.orm.get_group_list()
     group = random.choice(groups)
     old_contacts = app.orm.get_contacts_in_group(group)
@@ -45,7 +45,7 @@ def test_del_contact_from_group(app, db):
                     email3="3test@test.test"))
     group_list = app.orm.get_group_list()
     if len(group_list) == 0:
-        app.group.create_contact_to_group(Group(name='test', header='test1', footer='test2'))
+        app.group.create(Group(name='test', header='test1', footer='test2'))
     groups = app.orm.get_group_list()
     group = random.choice(groups)
     Select(app.driver.find_element(By.NAME, 'group')).select_by_value(group.id)
