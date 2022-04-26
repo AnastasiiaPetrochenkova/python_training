@@ -1,0 +1,150 @@
+{
+  "uid" : "7869c80f83360c41",
+  "name" : "test_add_contact[Наргиза:Матвей:Бурова:disks_2015:Проф.:колбаса:ул. Сокольническая 153:+7-(909)-041-36-26:+7-(909)-989-66-35:+7-(968)-128-84-44:+7-(909)-143-40-37:bicycle1950@outlook.com:closure1917@duck.com:slots1816@gmail.com:None]",
+  "fullName" : "test.test_add_contact#test_add_contact",
+  "historyId" : "fdce518ca5fe4dc00cc7d1c222da2915",
+  "time" : {
+    "start" : 1650996927731,
+    "stop" : 1650996932422,
+    "duration" : 4691
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1650996911582,
+      "stop" : 1650996911647,
+      "duration" : 65
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "stop",
+    "time" : {
+      "start" : 1650996911647,
+      "stop" : 1650996911647,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1650996911648,
+      "stop" : 1650996911654,
+      "duration" : 6
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1650996927660,
+      "stop" : 1650996927730,
+      "duration" : 70
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1650996999789,
+      "stop" : 1650996999789,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1650996999790,
+      "stop" : 1650997000131,
+      "duration" : 341
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_contact"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro-Anastasia.local"
+  }, {
+    "name" : "thread",
+    "value" : "34854-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_add_contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "json_contacts",
+    "value" : "Наргиза:Матвей:Бурова:disks_2015:Проф.:колбаса:ул. Сокольническая 153:+7-(909)-041-36-26:+7-(909)-989-66-35:+7-(968)-128-84-44:+7-(909)-143-40-37:bicycle1950@outlook.com:closure1917@duck.com:slots1816@gmail.com:None"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7869c80f83360c41.json",
+  "parameterValues" : [ "Наргиза:Матвей:Бурова:disks_2015:Проф.:колбаса:ул. Сокольническая 153:+7-(909)-041-36-26:+7-(909)-989-66-35:+7-(968)-128-84-44:+7-(909)-143-40-37:bicycle1950@outlook.com:closure1917@duck.com:slots1816@gmail.com:None" ]
+}

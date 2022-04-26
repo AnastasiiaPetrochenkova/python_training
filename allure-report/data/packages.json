@@ -1,0 +1,385 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "test",
+    "children" : [ {
+      "name" : "test_add_contact",
+      "children" : [ {
+        "name" : "test_add_contact[Имя2:Отчество:Фамилия:Никнейм:Название:Компания:Адрес:749512312311:71231231212:797788148991:1234567890:test@test.test:2test@test.test:3test@test.test:None]",
+        "uid" : "a30960aee5e3290b",
+        "parentUid" : "d08168f24e45db2068243b0e4b6dc904",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996919812,
+          "stop" : 1650996923146,
+          "duration" : 3334
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Имя2:Отчество:Фамилия:Никнейм:Название:Компания:Адрес:749512312311:71231231212:797788148991:1234567890:test@test.test:2test@test.test:3test@test.test:None" ]
+      }, {
+        "name" : "test_add_contact[Анфим:Ася:Ардалионов:till_1846:Профессор:пятно:Аллея Стромынка 1389:+7-(909)-404-79-43:+7-(968)-616-31-09:+7-(968)-411-94-54:+7-(932)-633-20-07:focal1890@outlook.com:bit1929@protonmail.com:tablets1876@example.org:None]",
+        "uid" : "c8a6ec28ba058707",
+        "parentUid" : "d08168f24e45db2068243b0e4b6dc904",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996923221,
+          "stop" : 1650996927657,
+          "duration" : 4436
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Анфим:Ася:Ардалионов:till_1846:Профессор:пятно:Аллея Стромынка 1389:+7-(909)-404-79-43:+7-(968)-616-31-09:+7-(968)-411-94-54:+7-(932)-633-20-07:focal1890@outlook.com:bit1929@protonmail.com:tablets1876@example.org:None" ]
+      }, {
+        "name" : "test_add_contact[Наргиза:Матвей:Бурова:disks_2015:Проф.:колбаса:ул. Сокольническая 153:+7-(909)-041-36-26:+7-(909)-989-66-35:+7-(968)-128-84-44:+7-(909)-143-40-37:bicycle1950@outlook.com:closure1917@duck.com:slots1816@gmail.com:None]",
+        "uid" : "7869c80f83360c41",
+        "parentUid" : "d08168f24e45db2068243b0e4b6dc904",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996927731,
+          "stop" : 1650996932422,
+          "duration" : 4691
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Наргиза:Матвей:Бурова:disks_2015:Проф.:колбаса:ул. Сокольническая 153:+7-(909)-041-36-26:+7-(909)-989-66-35:+7-(968)-128-84-44:+7-(909)-143-40-37:bicycle1950@outlook.com:closure1917@duck.com:slots1816@gmail.com:None" ]
+      }, {
+        "name" : "test_add_contact[Малика:Виктор:Алтухов:low_1873:Доктор:цифра:Аллея Загородное 340:+7-(949)-921-84-08:+7-(968)-980-88-47:+7-(999)-820-79-12:+7-(965)-005-88-97:eating1810@protonmail.com:irc2032@gmail.com:newsletter2052@gmail.com:None]",
+        "uid" : "b770cd825251c94",
+        "parentUid" : "d08168f24e45db2068243b0e4b6dc904",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996932556,
+          "stop" : 1650996936844,
+          "duration" : 4288
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Малика:Виктор:Алтухов:low_1873:Доктор:цифра:Аллея Загородное 340:+7-(949)-921-84-08:+7-(968)-980-88-47:+7-(999)-820-79-12:+7-(965)-005-88-97:eating1810@protonmail.com:irc2032@gmail.com:newsletter2052@gmail.com:None" ]
+      }, {
+        "name" : "test_add_contact[Владислав:Мила:Сахарнова:cycle_1846:Проф.:много:Аллея Кетчерская 609:+7-(909)-922-23-52:+7-(915)-067-00-67:+7-(968)-168-32-41:+7-(968)-752-87-27:cheapest1817@protonmail.com:mutual1967@duck.com:ppc2018@protonmail.com:None]",
+        "uid" : "5040fcbdfbece199",
+        "parentUid" : "d08168f24e45db2068243b0e4b6dc904",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996936911,
+          "stop" : 1650996941033,
+          "duration" : 4122
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Владислав:Мила:Сахарнова:cycle_1846:Проф.:много:Аллея Кетчерская 609:+7-(909)-922-23-52:+7-(915)-067-00-67:+7-(968)-168-32-41:+7-(968)-752-87-27:cheapest1817@protonmail.com:mutual1967@duck.com:ppc2018@protonmail.com:None" ]
+      }, {
+        "name" : "test_add_contact[Паисий:Марианна:Васькина:thats_1904:Миссис:коммунистический:Аллея Калитниковская Ср. 1215:+7-(934)-150-49-00:+7-(944)-478-21-83:+7-(999)-185-51-59:+7-(909)-306-20-57:marilyn2034@example.org:sentences2043@outlook.com:examples2021@live.com:None]",
+        "uid" : "61c0ecaa6dff6318",
+        "parentUid" : "d08168f24e45db2068243b0e4b6dc904",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996941131,
+          "stop" : 1650996945777,
+          "duration" : 4646
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "Паисий:Марианна:Васькина:thats_1904:Миссис:коммунистический:Аллея Калитниковская Ср. 1215:+7-(934)-150-49-00:+7-(944)-478-21-83:+7-(999)-185-51-59:+7-(909)-306-20-57:marilyn2034@example.org:sentences2043@outlook.com:examples2021@live.com:None" ]
+      } ],
+      "uid" : "d08168f24e45db2068243b0e4b6dc904"
+    }, {
+      "name" : "test_add_group",
+      "children" : [ {
+        "name" : "test_add_new_group[None:::]",
+        "uid" : "2ffd9db75af38fb6",
+        "parentUid" : "26996eb283b3c62ba5edb3d2d84f74de",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996945922,
+          "stop" : 1650996947266,
+          "duration" : 1344
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "None:::" ]
+      }, {
+        "name" : "test_add_new_group[None:личность:обладать:москвич]",
+        "uid" : "83396457e0cfde19",
+        "parentUid" : "26996eb283b3c62ba5edb3d2d84f74de",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996947387,
+          "stop" : 1650996948543,
+          "duration" : 1156
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "None:личность:обладать:москвич" ]
+      }, {
+        "name" : "test_add_new_group[None:бояться:согласный:столовый]",
+        "uid" : "1ba16d24949b29ba",
+        "parentUid" : "26996eb283b3c62ba5edb3d2d84f74de",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996948597,
+          "stop" : 1650996949741,
+          "duration" : 1144
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "None:бояться:согласный:столовый" ]
+      }, {
+        "name" : "test_add_new_group[None:умереть:мастерская:знак]",
+        "uid" : "abc3ace1784212e4",
+        "parentUid" : "26996eb283b3c62ba5edb3d2d84f74de",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996949814,
+          "stop" : 1650996950928,
+          "duration" : 1114
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "None:умереть:мастерская:знак" ]
+      }, {
+        "name" : "test_add_new_group[None:убедиться:сыграть:время]",
+        "uid" : "1d4d8813b04505c7",
+        "parentUid" : "26996eb283b3c62ba5edb3d2d84f74de",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996950995,
+          "stop" : 1650996952047,
+          "duration" : 1052
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "None:убедиться:сыграть:время" ]
+      }, {
+        "name" : "test_add_new_group[None:надел:метр:грозный]",
+        "uid" : "ff31543df0d6cf45",
+        "parentUid" : "26996eb283b3c62ba5edb3d2d84f74de",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996952107,
+          "stop" : 1650996953167,
+          "duration" : 1060
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "None:надел:метр:грозный" ]
+      } ],
+      "uid" : "26996eb283b3c62ba5edb3d2d84f74de"
+    }, {
+      "name" : "test_check_data",
+      "children" : [ {
+        "name" : "test_alldata_on_home_page",
+        "uid" : "ad37c6fe1e19c5f7",
+        "parentUid" : "d5eeff93d72a99893256a5fdb6fa95f8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996953257,
+          "stop" : 1650996969491,
+          "duration" : 16234
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d5eeff93d72a99893256a5fdb6fa95f8"
+    }, {
+      "name" : "test_contact_group",
+      "children" : [ {
+        "name" : "test_add_contact_to_group",
+        "uid" : "1f88d3b78807df99",
+        "parentUid" : "bfdc47d95dba6f918c43e65c75c08a82",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996969781,
+          "stop" : 1650996972524,
+          "duration" : 2743
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_del_contact_from_group",
+        "uid" : "54566dbb42c72aa8",
+        "parentUid" : "bfdc47d95dba6f918c43e65c75c08a82",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996973878,
+          "stop" : 1650996978782,
+          "duration" : 4904
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "bfdc47d95dba6f918c43e65c75c08a82"
+    }, {
+      "name" : "test_db_matches_ui",
+      "children" : [ {
+        "name" : "test_group_list",
+        "uid" : "ed7123329f1a5e3b",
+        "parentUid" : "40edaafe2cecf142400f5d76487573d9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996979504,
+          "stop" : 1650996983614,
+          "duration" : 4110
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "40edaafe2cecf142400f5d76487573d9"
+    }, {
+      "name" : "test_del_contact",
+      "children" : [ {
+        "name" : "test_delete_some_contact",
+        "uid" : "b42d280d4340db92",
+        "parentUid" : "9ede81b1639a6772534a0ecd029f166f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996983681,
+          "stop" : 1650996987989,
+          "duration" : 4308
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9ede81b1639a6772534a0ecd029f166f"
+    }, {
+      "name" : "test_del_group",
+      "children" : [ {
+        "name" : "test_delete_some_group",
+        "uid" : "f1ebaab5a01216a0",
+        "parentUid" : "b18e9fe6511b66d8665057adfa5d48b1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996989441,
+          "stop" : 1650996990458,
+          "duration" : 1017
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b18e9fe6511b66d8665057adfa5d48b1"
+    }, {
+      "name" : "test_edit_contact",
+      "children" : [ {
+        "name" : "test_edit_some_contact",
+        "uid" : "d4cb54a7f80d3101",
+        "parentUid" : "f3a445a865bdb601cc0d658b9265a6e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996990560,
+          "stop" : 1650996998177,
+          "duration" : 7617
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f3a445a865bdb601cc0d658b9265a6e9"
+    }, {
+      "name" : "test_edit_group",
+      "children" : [ {
+        "name" : "test_edit_by_id",
+        "uid" : "ce571f3b560b2995",
+        "parentUid" : "198d14cc6201c23333e5463ac8a4f115",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650996998422,
+          "stop" : 1650996999787,
+          "duration" : 1365
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "198d14cc6201c23333e5463ac8a4f115"
+    } ],
+    "uid" : "d662795e8d349f9b5595bf62f43ea7ae"
+  } ]
+}
